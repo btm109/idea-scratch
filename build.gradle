@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.6
+
+repositories {
+  mavenCentral()
+
+  mavenCentral artifactUrls: [
+          "http://repository.codehaus.org/",
+          "http://repo.springsource.org/release",
+          "http://repository.jboss.org/nexus/content/groups/public-jboss",
+          "http://gradle.artifactoryonline.com/gradle/plugins"
+  ]
+}
+
+dependencies {
+  compile 'org.springframework:spring-context:3.2.3.RELEASE' // spring base
+  compile 'org.apache.cxf:cxf-bundle:2.7.5'                  // all cxf
+  compile 'log4j:log4j:1.2.17'                               // implementation of java logging api
+  compile 'org.slf4j:slf4j-api:1.7.5'                        // slf4j api
+  compile 'org.slf4j:slf4j-log4j12:1.6.1'                    // slf4j implementation with log4j
+  compile 'junit:junit:4.11'                                 // junit
+  compile 'org.springframework:spring-test:3.2.3.RELEASE'    // test runner & context config
+}
